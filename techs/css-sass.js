@@ -4,7 +4,7 @@ var vowFs = require('enb/lib/fs/async-fs');
 var path = require('path');
 var logger = new (require('enb/lib/logger'))();
 
-var fileList = ['css', 'scss'];
+var fileList = ['scss'];
 
 module.exports = require('enb/techs/css').buildFlow()
     .name('enb-sass')
@@ -44,6 +44,10 @@ module.exports = require('enb/techs/css').buildFlow()
                     return Vow.when(that._processIncludes(data, file.fullname))
                         .then(function (data) {
                             return data;
+                            return
+                                '/* ' + file.fullname + ': begin*/\n' + 
+                                data + 
+                                '/* ' + file.fullname + ': end*/\n';
                         });
                 }));
         });
