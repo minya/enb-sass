@@ -43,7 +43,6 @@ module.exports = require('enb/techs/css').buildFlow()
                     data = that._processUrls(data, file.fullname);
                     return Vow.when(that._processIncludes(data, file.fullname))
                         .then(function (data) {
-                            return data;
                             return
                                 '/* ' + file.fullname + ': begin*/\n' + 
                                 data + 
