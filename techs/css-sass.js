@@ -44,9 +44,7 @@ module.exports = require('enb/techs/css').buildFlow()
                     return Vow.when(that._processIncludes(data, file.fullname))
                         .then(function (data) {
                             return
-                                '/* ' + file.fullname + ': begin*/\n' + 
-                                data + 
-                                '/* ' + file.fullname + ': end*/';
+                                '/* ' + file.fullname + ': begin*/\n' + data + '/* ' + file.fullname + ': end*/';
                         });
                 }));
         });
