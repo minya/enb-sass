@@ -47,7 +47,7 @@ module.exports = require('enb/techs/css').buildFlow()
                             return
                                 '/* ' + file.fullname + ': begin*/\n' + 
                                 data + 
-                                '/* ' + file.fullname + ': end*/\n';
+                                '/* ' + file.fullname + ': end*/';
                         });
                 }));
         });
